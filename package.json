@@ -1,0 +1,15 @@
+{
+  "name": "family-site",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Family Site: Tyler's apps (downloads) and plain-language AI tips for family and friends. Static files in site/, published to GitHub Pages.",
+  "scripts": {
+    "start": "node server.mjs",
+    "test": "node --test \"test/*.test.mjs\"",
+    "shots": "node scripts/shots.mjs"
+  },
+  "devDependencies": {
+    "playwright-core": "^1.63.0"
+  }
+}
