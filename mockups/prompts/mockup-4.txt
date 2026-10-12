@@ -1,0 +1,8 @@
+Flat, pixel-crisp UI screenshot of a website home page in DARK MODE, seen on a desktop browser, landscape 3:2, no device frame, no browser chrome, no people, no photos. Readable clean sans-serif type (no handwriting, no serif, no italics). Flat solid backgrounds: no gradient blobs, no glow, no noise. Icons are coloured, filled duotone icons in one matching set (Phosphor duotone style), never emoji. Few words. Spell every word exactly as written below and add no other text.
+
+Content, top to bottom:
+- Header bar: small heart icon + "Tyler's Apps & AI Tips" on the left; "Apps" and "AI tips" links on the right.
+- Big heading "Free apps & AI tips", small line under it "Made by Tyler for family & friends."
+- Section "Apps": one app card for "Speech Transcriber" with a blue rounded-square microphone app icon, the line "Talk instead of type, in any app.", small Windows and Apple logos with "Windows" and "Mac", and a big button "Get it". Next to it a faint dashed card "More coming".
+- Section "AI tips": a wide card "Let ChatGPT use your computer", then three tip cards: "Talk to it like a helpful friend" (chat bubble icon), "Show it a photo" (camera icon), "Double-check what matters" (magnifying glass icon), each with a short grey line and a small "Copy" button.
+LOOK: "Big and simple" for grandparents. Extra-large text and buttons, very high contrast (white text on near-black), one single centred column, nothing small. Bright yellow accent for buttons and headings' icons. The Speech Transcriber card is one huge card with a giant yellow "Get it" button. The tips are big stacked rows (one per line) with a large icon on the left. Thick 2px outlines on cards. Calm, obvious, impossible to miss what to click.

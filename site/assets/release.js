@@ -78,8 +78,8 @@ export const SAMPLE = {
     tag_name: 'speech-transcriber-v0.3.0',
     published_at: '2026-10-12T20:00:00Z',
     assets: [
-      { name: 'SpeechTranscriber-Setup-0.3.0.exe', size: 189_000_000, digest: `sha256:${'0'.repeat(64)}`, browser_download_url: `${DOWNLOAD_PREFIX}sample/SpeechTranscriber-Setup-0.3.0.exe` },
-      { name: 'SpeechTranscriber-0.3.0-macos-arm64.dmg', size: 240_000_000, digest: `sha256:${'0'.repeat(64)}`, browser_download_url: `${DOWNLOAD_PREFIX}sample/SpeechTranscriber-0.3.0-macos-arm64.dmg` },
+      { name: 'SpeechTranscriber-Setup-0.3.0.exe', size: 199_004_632, digest: `sha256:${'0'.repeat(64)}`, browser_download_url: `${DOWNLOAD_PREFIX}sample/SpeechTranscriber-Setup-0.3.0.exe` },
+      { name: 'SpeechTranscriber-0.3.0-macos-arm64.dmg', size: 266_715_006, digest: `sha256:${'0'.repeat(64)}`, browser_download_url: `${DOWNLOAD_PREFIX}sample/SpeechTranscriber-0.3.0-macos-arm64.dmg` },
     ],
   }),
 };

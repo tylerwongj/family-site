@@ -4,6 +4,7 @@ Tyler's small website for **family and friends** (not the public): downloads of 
 
 - **What it is:** plain static files in `site/` (HTML, one CSS, small ES-module JS, no build step, no framework). `server.mjs` is only the local preview; it is never published.
 - **Live (once Tyler approves):** GitHub Pages from the public repo `tylerwongj/family-site` → https://tylerwongj.github.io/family-site/. `.github/workflows/pages.yml` runs `npm test`, then publishes `site/` on every push to main. **Not created yet: ask Tyler before creating the repo or pushing** (public repo = anyone with the link can read it).
+- **Look:** Tyler picks from numbered picture mockups before any restyle (`mockups/look-*.png`; 1 = version 1 as built, 2-4 = ChatGPT Images drawn from `mockups/prompts/`). Pick pending as of 2026-10-12.
 - **Audience:** non-technical family. Few words, many visuals, plain names, every step says exactly what to click. Dark by default (footer button = light), phone-first (375x812, 844x390, 891x309).
 
 ## Rules (security and trust)
