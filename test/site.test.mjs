@@ -23,6 +23,12 @@ test('site has the expected pages', () => {
   assert.deepEqual(rel, ['ai-tips/computer-use/index.html', 'ai-tips/index.html', 'index.html', 'speech-transcriber/index.html']);
 });
 
+test('home page tip count matches tips.json', () => {
+  const { tips } = JSON.parse(readFileSync(join(SITE, 'data/tips.json'), 'utf8'));
+  const home = readFileSync(join(SITE, 'index.html'), 'utf8');
+  assert.match(home, new RegExp(`<h3>${tips.length} quick AI tips</h3>`), `home page should say "${tips.length} quick AI tips"`);
+});
+
 for (const page of pages) {
   const name = relative(SITE, page).replaceAll('\\', '/');
   const html = readFileSync(page, 'utf8');

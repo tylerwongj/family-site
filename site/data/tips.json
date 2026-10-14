@@ -1,5 +1,5 @@
 {
-  "_help": "AI tip cards and videos for the AI tips page (the home page shows the first 3 tips). Tip: id (unique, kebab-case), icon (a name in tools/build-icons.mjs), color (blue|green|amber|pink|violet|teal|red), title (a few words), text (1-2 short sentences, plain language), optional try (an example to copy), optional link {href, label} (https://... or a site path like speech-transcriber/). Video: title, url (https://...), optional by, length (e.g. 6 min). Keep words few.",
+  "_help": "AI tip cards and videos for the AI tips page (the home page links to it as "N quick AI tips"; npm test checks N matches). Tip: id (unique, kebab-case), icon (a name in tools/build-icons.mjs), color (blue|green|amber|pink|violet|teal|red), title (a few words), text (1-2 short sentences, plain language), optional try (an example to copy), optional link {href, label} (https://... or a site path like speech-transcriber/). Video: title, url (https://...), optional by, length (e.g. 6 min). Keep words few.",
   "tips": [
     {
       "id": "talk-normally",

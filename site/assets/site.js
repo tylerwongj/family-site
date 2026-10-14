@@ -80,9 +80,9 @@ if (tipTargets.length) {
     target.replaceChildren(...data.tips.slice(0, limit).map(tipCard));
   }
   for (const target of document.querySelectorAll('[data-videos]')) {
-    target.replaceChildren(...(data.videos.length
-      ? data.videos.map(videoCard).filter(Boolean)
-      : [el('div', { class: 'empty' }, icon('monitor-play'), el('span', {}, 'Videos coming soon'))]));
+    const cards = data.videos.map(videoCard).filter(Boolean);
+    target.replaceChildren(...cards);
+    target.closest('section').hidden = !cards.length; // no "coming soon" filler: the section shows once a video exists
   }
 }
 

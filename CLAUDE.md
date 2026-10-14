@@ -4,8 +4,9 @@ Tyler's small website for **family and friends** (not the public): downloads of 
 
 - **What it is:** plain static files in `site/` (HTML, one CSS, small ES-module JS, no build step, no framework). `server.mjs` is only the local preview; it is never published.
 - **Live (once Tyler approves):** GitHub Pages from the public repo `tylerwongj/family-site` → https://tylerwongj.github.io/family-site/. `.github/workflows/pages.yml` runs `npm test`, then publishes `site/` on every push to main. **Not created yet: ask Tyler before creating the repo or pushing** (public repo = anyone with the link can read it).
-- **Look:** Tyler picks from numbered picture mockups before any restyle (`mockups/look-*.png`; 1 = version 1 as built, 2-4 = ChatGPT Images drawn from `mockups/prompts/`). Pick pending as of 2026-10-12.
+- **Look:** Tyler likes the current look (2026-10-14: "I like the website as a whole"); the old mockup pick (`mockups/look-*.png`) is closed. A full restyle still starts with numbered picture mockups.
 - **Audience:** non-technical family. Few words, many visuals, plain names, every step says exactly what to click. Dark by default (footer button = light), phone-first (375x812, 844x390, 891x309).
+- **Tyler's taste (2026-10-14):** fewer words, more real pictures. **Only clickable things look clickable:** links/cards get a border, shadow and hover lift; buttons are filled; plain facts are icon + words with no box (`.facts`); info boxes are flat (no border); `.kbd` is only for real keyboard keys; UI words in steps are plain quoted text, never chips. The home page explains the site in one sentence and links to tips (no tip cards there). Prices are stated plainly ("ChatGPT Plus: $20 a month").
 
 ## Rules (security and trust)
 
@@ -21,13 +22,13 @@ Tyler's small website for **family and friends** (not the public): downloads of 
 - States: no release yet (GitHub 404) → "Coming soon"; GitHub unreachable → buttons open the releases page; ready → buttons, size, version, date, fingerprints. Drafts and pre-releases never show (GitHub's "latest" skips them).
 - `?demo` on localhost shows clearly labelled sample data, for previewing the finished look.
 
-## Real install screenshots (pending)
+## App pictures
 
-Each step picture is a `<figure class="shot pending" data-shot="<file>">` in `site/speech-transcriber/index.html`. To add a real one: save it as `site/assets/img/speech-transcriber/<file>` (PNG/WebP, about 1200 px wide, under 300 KB, no personal info, real screenshot only), then replace that figure's contents with `<img src="../assets/img/speech-transcriber/<file>" alt="<what it shows>" loading="lazy">` and drop the `pending` class. Files: `win-1-open.png`, `win-2-run-anyway.png`, `win-3-install.png`, `mac-1-drag.png`, `mac-2-open-anyway.png`, `mac-3-permissions.png`.
+`site/assets/img/speech-transcriber/bubble-*.png` are the app's real bubble (recording, transcribing, typed), rendered by the app's own code at 2x (offscreen PySide6, `RecordingPill.show_status`, waited ~1.5 s so the label and tick finish animating, then cropped to the picture). Re-render them when the bubble's look changes. Install steps are text only: no placeholder pictures, and never drawn copies of Windows/Mac dialogs; a real screenshot (PNG/WebP, under 300 KB, no personal info) may be added under a step later.
 
 ## Adding things
 
-- **AI tips / videos:** edit `site/data/tips.json` (format in its `_help`). The home page shows the first 3 tips. New icon? Add its Phosphor name to `tools/build-icons.mjs`, rerun it (source: `people-map/node_modules/@phosphor-icons/web/src/duotone/selection.json`), commit `site/assets/icons.svg`.
+- **AI tips / videos:** edit `site/data/tips.json` (format in its `_help`). Tips show only on the AI tips page; the Videos section stays hidden until a video exists. New icon? Add its Phosphor name to `tools/build-icons.mjs`, rerun it (source: `people-map/node_modules/@phosphor-icons/web/src/duotone/selection.json`), commit `site/assets/icons.svg`.
 - **A new app:** copy `site/speech-transcriber/` to `site/<app>/`, add its card to the Apps grid in `site/index.html`, extend the expected-pages list in `test/site.test.mjs`. Its installers go in that app's own public downloads repo, never here.
 - **Paths are relative** (`../assets/...`) so the site works at `/family-site/` on Pages and `/` locally. `site/404.html` is self-contained and links to `/family-site/` (change it if the repo is renamed).
 

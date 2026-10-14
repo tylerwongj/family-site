@@ -28,13 +28,30 @@
     <img src="../assets/img/speech-transcriber/icon.png" alt="" width="104" height="104">
     <div>
       <h1>Speech Transcriber</h1>
-      <p class="lead">Press a key, talk, press it again. Your words get typed for you.</p>
+      <p class="lead">Talk, and your words get typed. Works in any app: email, texts, ChatGPT.</p>
     </div>
-    <ul class="pills">
-      <li><svg class="i c-green" aria-hidden="true"><use href="../assets/icons.svg#i-lock-simple"/></svg>Stays on your computer</li>
-      <li><svg class="i c-teal" aria-hidden="true"><use href="../assets/icons.svg#i-wifi-high"/></svg>Works offline after setup</li>
+    <ul class="facts">
+      <li><svg class="i c-green" aria-hidden="true"><use href="../assets/icons.svg#i-lock-simple"/></svg>Private: stays on your computer</li>
       <li><svg class="i c-pink" aria-hidden="true"><use href="../assets/icons.svg#i-heart"/></svg>Free, no account</li>
     </ul>
+  </section>
+
+  <section id="how" aria-label="How it works">
+    <ol class="how">
+      <li>
+        <div class="how-pic"><img src="../assets/img/speech-transcriber/bubble-recording.png" alt="The red microphone bubble with a timer" width="123" height="44"></div>
+        <p><span class="kbd">Right Alt</span> then talk</p>
+      </li>
+      <li>
+        <div class="how-pic"><img src="../assets/img/speech-transcriber/bubble-transcribing.png" alt="The bubble saying Transcribing" width="174" height="44"></div>
+        <p><span class="kbd">Right Alt</span> again</p>
+      </li>
+      <li>
+        <div class="how-pic"><span class="typed-line">See you at the park at 5!</span><img src="../assets/img/speech-transcriber/bubble-typed.png" alt="The bubble saying Typed with a green tick" width="130" height="44"></div>
+        <p>Your words appear</p>
+      </li>
+    </ol>
+    <p class="mac-key"><svg class="i" aria-hidden="true"><use href="../assets/icons.svg#i-apple-logo"/></svg>On a Mac the key is <span class="kbd">Right ⌘</span></p>
   </section>
 
   <div class="phone-note" id="phone-note" hidden>
@@ -49,17 +66,18 @@
     <div class="dl-grid" id="dl-grid">
       <div class="dl" data-platform="windows">
         <div class="dl-head"><svg class="i c-blue" aria-hidden="true"><use href="../assets/icons.svg#i-windows-logo"/></svg><h3>Windows</h3></div>
-        <p class="dl-os">Windows 10 or 11 (64-bit)</p>
+        <p class="dl-os">Windows 10 or 11</p>
         <a class="btn" aria-disabled="true"><svg class="i" aria-hidden="true"><use href="../assets/icons.svg#i-hourglass-medium"/></svg><span>Checking…</span></a>
         <small></small>
       </div>
       <div class="dl" data-platform="macos">
         <div class="dl-head"><svg class="i" aria-hidden="true"><use href="../assets/icons.svg#i-apple-logo"/></svg><h3>Mac</h3></div>
-        <p class="dl-os">macOS 12 or newer, Apple chip (M1 or later)</p>
+        <p class="dl-os">Macs from 2020 on (Apple chip)</p>
         <a class="btn" aria-disabled="true"><svg class="i" aria-hidden="true"><use href="../assets/icons.svg#i-hourglass-medium"/></svg><span>Checking…</span></a>
         <small></small>
       </div>
     </div>
+    <p class="note"><svg class="i c-red" aria-hidden="true"><use href="../assets/icons.svg#i-x-circle"/></svg><span>Not for phones, tablets, Chromebooks or older Intel Macs.</span></p>
     <details class="check-file" id="check-file" hidden>
       <summary><svg class="i c-green" aria-hidden="true"><use href="../assets/icons.svg#i-fingerprint"/></svg>Check the download (optional)<svg class="i caret" aria-hidden="true"><use href="../assets/icons.svg#i-caret-down"/></svg></summary>
       <div class="body">
@@ -72,7 +90,7 @@
   </section>
 
   <section id="install">
-    <h2><svg class="i c-violet" aria-hidden="true"><use href="../assets/icons.svg#i-list-checks"/></svg>Install in 3 steps</h2>
+    <h2><svg class="i c-violet" aria-hidden="true"><use href="../assets/icons.svg#i-list-checks"/></svg>Install</h2>
     <div class="tabs" role="tablist" data-tabs aria-label="Your computer">
       <button type="button" role="tab" id="tab-windows" aria-controls="steps-windows" aria-selected="true"><svg class="i" aria-hidden="true"><use href="../assets/icons.svg#i-windows-logo"/></svg>Windows</button>
       <button type="button" role="tab" id="tab-macos" aria-controls="steps-macos" aria-selected="false" tabindex="-1"><svg class="i" aria-hidden="true"><use href="../assets/icons.svg#i-apple-logo"/></svg>Mac</button>
@@ -80,142 +98,34 @@
 
     <div role="tabpanel" id="steps-windows" aria-labelledby="tab-windows">
       <ol class="steps">
-        <li class="step">
-          <figure class="shot pending" data-shot="win-1-open.png">
-            <svg class="i c-blue" aria-hidden="true"><use href="../assets/icons.svg#i-download-simple"/></svg>
-            <span class="path"><span class="key press">SpeechTranscriber-Setup.exe</span></span>
-            <span class="pending-tag"><svg class="i" aria-hidden="true"><use href="../assets/icons.svg#i-camera"/></svg>Screenshot coming</span>
-          </figure>
-          <div class="step-text"><h3><span class="num"></span>Open the file</h3><p>Find it in <b>Downloads</b> and double-click it.</p></div>
-        </li>
-        <li class="step">
-          <figure class="shot pending" data-shot="win-2-run-anyway.png">
-            <svg class="i c-amber" aria-hidden="true"><use href="../assets/icons.svg#i-shield-check"/></svg>
-            <span class="path"><span class="key press">More info</span><svg class="i arrow" aria-hidden="true"><use href="../assets/icons.svg#i-arrow-right"/></svg><span class="key press">Run anyway</span></span>
-            <span class="pending-tag"><svg class="i" aria-hidden="true"><use href="../assets/icons.svg#i-camera"/></svg>Screenshot coming</span>
-          </figure>
-          <div class="step-text"><h3><span class="num"></span>Blue warning? It's OK</h3><p>"Windows protected your PC" shows once. Click <b>More info</b>, then <b>Run anyway</b>.</p></div>
-        </li>
-        <li class="step">
-          <figure class="shot pending" data-shot="win-3-install.png">
-            <svg class="i c-green" aria-hidden="true"><use href="../assets/icons.svg#i-check-circle"/></svg>
-            <span class="path"><span class="key press">Install</span><svg class="i arrow" aria-hidden="true"><use href="../assets/icons.svg#i-arrow-right"/></svg><span class="key press">Finish</span></span>
-            <span class="pending-tag"><svg class="i" aria-hidden="true"><use href="../assets/icons.svg#i-camera"/></svg>Screenshot coming</span>
-          </figure>
-          <div class="step-text"><h3><span class="num"></span>Install, then wait once</h3><p>Click <b>Install</b>, <b>Finish</b>. A small <b>Downloading model…</b> pill shows in the corner the first time. Wait until it's gone.</p></div>
-        </li>
+        <li><span class="num"></span><div><h3>Open the file</h3><p>Double-click it in Downloads.</p></div></li>
+        <li><span class="num"></span><div><h3>Blue warning? It's OK</h3><p>Click “More info”, then “Run anyway”. Free apps get this once.</p></div></li>
+        <li><span class="num"></span><div><h3>Install, then wait once</h3><p>The first time, it downloads its speech model (a few minutes).</p></div></li>
       </ol>
-      <div class="use-it">
-        <b>Then:</b>
-        <span class="flow">
-          <span class="key press"><svg class="i" aria-hidden="true"><use href="../assets/icons.svg#i-keyboard"/></svg>Right Alt</span>
-          <svg class="i arrow" aria-hidden="true"><use href="../assets/icons.svg#i-arrow-right"/></svg>
-          <span class="key"><svg class="i c-pink" aria-hidden="true"><use href="../assets/icons.svg#i-microphone"/></svg>Talk</span>
-          <svg class="i arrow" aria-hidden="true"><use href="../assets/icons.svg#i-arrow-right"/></svg>
-          <span class="key press"><svg class="i" aria-hidden="true"><use href="../assets/icons.svg#i-keyboard"/></svg>Right Alt</span>
-          <svg class="i arrow" aria-hidden="true"><use href="../assets/icons.svg#i-arrow-right"/></svg>
-          <span class="key"><svg class="i c-green" aria-hidden="true"><use href="../assets/icons.svg#i-chat-circle-text"/></svg>Words appear</span>
-        </span>
-      </div>
     </div>
 
     <div role="tabpanel" id="steps-macos" aria-labelledby="tab-macos" hidden>
       <ol class="steps">
-        <li class="step">
-          <figure class="shot pending" data-shot="mac-1-drag.png">
-            <svg class="i c-blue" aria-hidden="true"><use href="../assets/icons.svg#i-hand-tap"/></svg>
-            <span class="path"><span class="key">Speech Transcriber</span><svg class="i arrow" aria-hidden="true"><use href="../assets/icons.svg#i-arrow-right"/></svg><span class="key">Applications</span></span>
-            <span class="pending-tag"><svg class="i" aria-hidden="true"><use href="../assets/icons.svg#i-camera"/></svg>Screenshot coming</span>
-          </figure>
-          <div class="step-text"><h3><span class="num"></span>Drag it to Applications</h3><p>Open the downloaded file, drag <b>Speech Transcriber</b> onto <b>Applications</b>, then open it from <b>Applications</b>.</p></div>
-        </li>
-        <li class="step">
-          <figure class="shot pending" data-shot="mac-2-open-anyway.png">
-            <svg class="i c-amber" aria-hidden="true"><use href="../assets/icons.svg#i-gear-six"/></svg>
-            <span class="path"><span class="key">System Settings</span><svg class="i arrow" aria-hidden="true"><use href="../assets/icons.svg#i-arrow-right"/></svg><span class="key">Privacy &amp; Security</span><svg class="i arrow" aria-hidden="true"><use href="../assets/icons.svg#i-arrow-right"/></svg><span class="key press">Open Anyway</span></span>
-            <span class="pending-tag"><svg class="i" aria-hidden="true"><use href="../assets/icons.svg#i-camera"/></svg>Screenshot coming</span>
-          </figure>
-          <div class="step-text"><h3><span class="num"></span>Mac warning? It's OK</h3><p>Shows once. Open <b>System Settings → Privacy &amp; Security</b>, scroll down, click <b>Open Anyway</b>, then <b>Open</b>.</p></div>
-        </li>
-        <li class="step">
-          <figure class="shot pending" data-shot="mac-3-permissions.png">
-            <svg class="i c-green" aria-hidden="true"><use href="../assets/icons.svg#i-check-circle"/></svg>
-            <span class="path"><span class="key">Microphone</span><span class="key">Input Monitoring</span><span class="key">Accessibility</span></span>
-            <span class="pending-tag"><svg class="i" aria-hidden="true"><use href="../assets/icons.svg#i-camera"/></svg>Screenshot coming</span>
-          </figure>
-          <div class="step-text">
-            <h3><span class="num"></span>Allow 3 things</h3>
-            <p>The setup window walks you through each. Switch <b>Speech Transcriber</b> on:</p>
-            <ul class="perm-list">
-              <li><svg class="i c-pink" aria-hidden="true"><use href="../assets/icons.svg#i-microphone"/></svg><b>Microphone</b> to hear you</li>
-              <li><svg class="i c-blue" aria-hidden="true"><use href="../assets/icons.svg#i-keyboard"/></svg><b>Input Monitoring</b> for the key</li>
-              <li><svg class="i c-violet" aria-hidden="true"><use href="../assets/icons.svg#i-cursor-click"/></svg><b>Accessibility</b> to type</li>
-            </ul>
-            <p>Still says <b>Needs access</b>? Click <b>Restart Speech Transcriber</b>.</p>
-          </div>
-        </li>
+        <li><span class="num"></span><div><h3>Drag it to Applications</h3><p>Open the downloaded file and drag the app onto Applications.</p></div></li>
+        <li><span class="num"></span><div><h3>Mac warning? It's OK</h3><p>System Settings → Privacy &amp; Security → “Open Anyway”.</p></div></li>
+        <li><span class="num"></span><div><h3>Allow 3 things</h3><p>Microphone, Input Monitoring and Accessibility. The app shows you where.</p></div></li>
       </ol>
-      <div class="use-it">
-        <b>Then:</b>
-        <span class="flow">
-          <span class="key press"><svg class="i" aria-hidden="true"><use href="../assets/icons.svg#i-keyboard"/></svg>Right ⌘</span>
-          <svg class="i arrow" aria-hidden="true"><use href="../assets/icons.svg#i-arrow-right"/></svg>
-          <span class="key"><svg class="i c-pink" aria-hidden="true"><use href="../assets/icons.svg#i-microphone"/></svg>Talk</span>
-          <svg class="i arrow" aria-hidden="true"><use href="../assets/icons.svg#i-arrow-right"/></svg>
-          <span class="key press"><svg class="i" aria-hidden="true"><use href="../assets/icons.svg#i-keyboard"/></svg>Right ⌘</span>
-          <svg class="i arrow" aria-hidden="true"><use href="../assets/icons.svg#i-arrow-right"/></svg>
-          <span class="key"><svg class="i c-green" aria-hidden="true"><use href="../assets/icons.svg#i-chat-circle-text"/></svg>Words appear</span>
-        </span>
-      </div>
     </div>
-  </section>
-
-  <section id="works-on">
-    <h2><svg class="i c-teal" aria-hidden="true"><use href="../assets/icons.svg#i-desktop"/></svg>Works on</h2>
-    <div class="os-grid">
-      <div class="os"><svg class="i c-green" aria-hidden="true"><use href="../assets/icons.svg#i-check-circle"/></svg><div><b>Windows 10 or 11</b><span>64-bit PCs</span></div></div>
-      <div class="os"><svg class="i c-green" aria-hidden="true"><use href="../assets/icons.svg#i-check-circle"/></svg><div><b>Mac with Apple chip</b><span>M1 or newer (2020+), macOS 12+</span></div></div>
-      <div class="os no"><svg class="i c-red" aria-hidden="true"><use href="../assets/icons.svg#i-x-circle"/></svg><div><b>Older Intel Macs</b><span>Not supported</span></div></div>
-      <div class="os no"><svg class="i c-red" aria-hidden="true"><use href="../assets/icons.svg#i-x-circle"/></svg><div><b>Phones, tablets, Chromebooks</b><span>Not supported</span></div></div>
-    </div>
-    <p class="note"><svg class="i c-blue" aria-hidden="true"><use href="../assets/icons.svg#i-apple-logo"/></svg><span>Which Mac? Apple menu → <b>About This Mac</b>. "Chip: Apple M…" means it works.</span></p>
-    <p class="note"><svg class="i c-teal" aria-hidden="true"><use href="../assets/icons.svg#i-wifi-high"/></svg><span>Internet needed once: the download, then a 2.5 GB speech model (a few minutes).</span></p>
-  </section>
-
-  <section id="updates">
-    <h2><svg class="i c-green" aria-hidden="true"><use href="../assets/icons.svg#i-arrows-clockwise"/></svg>Updates</h2>
-    <div class="update-flow">
-      <span class="key"><svg class="i c-pink" aria-hidden="true"><use href="../assets/icons.svg#i-microphone"/></svg>Mic icon by the clock</span>
-      <svg class="i arrow" aria-hidden="true"><use href="../assets/icons.svg#i-arrow-right"/></svg>
-      <span class="key press">Update available</span>
-      <svg class="i arrow" aria-hidden="true"><use href="../assets/icons.svg#i-arrow-right"/></svg>
-      <span class="key press">Yes</span>
-    </div>
-    <p class="note"><svg class="i c-green" aria-hidden="true"><use href="../assets/icons.svg#i-shield-check"/></svg><span>The app checks the new version is genuine before installing. Your settings, history and speech model stay.</span></p>
-    <p class="note"><svg class="i c-blue" aria-hidden="true"><use href="../assets/icons.svg#i-info"/></svg><span id="update-latest">No menu item? Click <b>Check for updates…</b> in the same menu.</span></p>
   </section>
 
   <section id="help">
-    <h2><svg class="i c-amber" aria-hidden="true"><use href="../assets/icons.svg#i-wrench"/></svg>Something off?</h2>
-    <div class="help-grid">
-      <div class="help"><h3><svg class="i" aria-hidden="true"><use href="../assets/icons.svg#i-warning"/></svg>No "Run anyway" button</h3><p>Click <b>More info</b> first. The button appears under it.</p></div>
-      <div class="help"><h3><svg class="i" aria-hidden="true"><use href="../assets/icons.svg#i-warning"/></svg>No "Open Anyway" on Mac</h3><p>Try opening the app once, then look again in <b>Privacy &amp; Security</b> within the hour.</p></div>
-      <div class="help"><h3><svg class="i" aria-hidden="true"><use href="../assets/icons.svg#i-warning"/></svg>Nothing appears after talking</h3><p>Click into a text box first. If it says <b>Copied</b>, press <b>Ctrl+V</b> (Mac: <b>⌘V</b>).</p></div>
-      <div class="help"><h3><svg class="i" aria-hidden="true"><use href="../assets/icons.svg#i-warning"/></svg>Lost what you said</h3><p>Mic icon → <b>Recent dictations</b>, click it, paste.</p></div>
-      <div class="help"><h3><svg class="i" aria-hidden="true"><use href="../assets/icons.svg#i-warning"/></svg>Wrong microphone</h3><p><b>Settings → Microphone</b>.</p></div>
-      <div class="help"><h3><svg class="i" aria-hidden="true"><use href="../assets/icons.svg#i-warning"/></svg>The key does nothing</h3><p>Mac: allow <b>Input Monitoring</b> (step 3). Any computer: mic icon → <b>System Check</b>.</p></div>
-      <div class="help"><h3><svg class="i" aria-hidden="true"><use href="../assets/icons.svg#i-warning"/></svg>Don't want it at startup</h3><p><b>Settings</b> → untick <b>Launch quietly when I sign in</b>.</p></div>
-      <div class="help ask"><h3><svg class="i" aria-hidden="true"><use href="../assets/icons.svg#i-heart"/></svg>Still stuck?</h3><p>Text Tyler a photo of your screen.</p></div>
-    </div>
-  </section>
-
-  <section id="safe">
-    <h2><svg class="i c-green" aria-hidden="true"><use href="../assets/icons.svg#i-shield-check"/></svg>Is it safe?</h2>
-    <div class="safe-grid">
-      <div class="safe"><svg class="i c-green" aria-hidden="true"><use href="../assets/icons.svg#i-lock-simple"/></svg><h3>Private</h3><p>Your voice never leaves your computer. No account, nothing uploaded.</p></div>
-      <div class="safe"><svg class="i c-amber" aria-hidden="true"><use href="../assets/icons.svg#i-shield-check"/></svg><h3>Why the warning</h3><p>Store apps pay for a digital "signature" Windows and Mac recognize. This free app has none, so your computer asks once.</p></div>
-      <div class="safe"><svg class="i c-blue" aria-hidden="true"><use href="../assets/icons.svg#i-download-simple"/></svg><h3>Only from here</h3><p>Download it only from this page. Got the file elsewhere? Delete it and ask Tyler.</p></div>
-    </div>
+    <details class="fold">
+      <summary><svg class="i c-amber" aria-hidden="true"><use href="../assets/icons.svg#i-wrench"/></svg>Something not working?<svg class="i caret" aria-hidden="true"><use href="../assets/icons.svg#i-caret-down"/></svg></summary>
+      <dl class="qa">
+        <dt>Nothing appears after talking</dt><dd>Click into a text box first. If it says Copied, press <span class="kbd">Ctrl</span> <span class="kbd">V</span> (Mac: <span class="kbd">⌘</span> <span class="kbd">V</span>).</dd>
+        <dt>Lost what you said</dt><dd>Mic icon by the clock → Recent dictations.</dd>
+        <dt>The key does nothing</dt><dd>Mic icon → System Check. Mac: allow Input Monitoring.</dd>
+        <dt>Wrong microphone</dt><dd>Mic icon → Settings → Microphone.</dd>
+        <dt>Updates</dt><dd>The app asks when a new version is ready. Click Yes; your settings stay.</dd>
+        <dt>Still stuck?</dt><dd>Text Tyler a photo of your screen.</dd>
+      </dl>
+      <p class="note" id="update-latest"></p>
+    </details>
   </section>
 </main>
 

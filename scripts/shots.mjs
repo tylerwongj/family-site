@@ -65,6 +65,12 @@ for (const size of SIZES) {
         if (!/hidden|clip/.test(cs.overflowX) || cs.textOverflow === 'ellipsis' || !e.clientWidth) continue;
         if (e.scrollWidth > e.clientWidth + 1) clipped.push((e.className || e.tagName).toString().slice(0, 30));
       }
+      // A picture poking out of its box (the home page's bubble did on phones, 2026-10-14)
+      for (const img of document.querySelectorAll('main img')) {
+        const r = img.getBoundingClientRect();
+        const p = img.parentElement.getBoundingClientRect();
+        if (r.width && (r.right > p.right + 1 || r.left < p.left - 1)) clipped.push(`picture sticks out: ${img.getAttribute('src').split('/').pop()}`);
+      }
       return { overflowX: document.scrollingElement.scrollWidth - W, covered, clipped };
     });
     const bad = [...errors];

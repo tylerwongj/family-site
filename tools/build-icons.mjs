@@ -11,7 +11,7 @@ arrows-clockwise lock-simple keyboard chat-circle-text camera image device-mobil
 arrow-square-out info fingerprint seal-check heart house squares-four list-checks eye hand-palm
 key magnifying-glass chats-circle robot wifi-high hourglass-medium book-open-text caret-down
 prohibit gear-six clipboard-text monitor-play hand-tap user-circle-check package
-arrow-counter-clockwise x-circle`.split(/\s+/);
+arrow-counter-clockwise x-circle currency-dollar`.split(/\s+/);
 
 const src = process.argv[2];
 if (!src) throw new Error('Usage: node tools/build-icons.mjs <selection.json>');
