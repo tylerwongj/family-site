@@ -14,7 +14,7 @@ const symbols = new Set([...sprite.matchAll(/<symbol id="([^"]+)"/g)].map((m) =>
 
 // Every outside address the pages may link to. Add here on purpose, never by accident.
 const EXTERNAL_OK = [
-  'https://chatgpt.com/download/',
+  'https://chatgpt.com/',
   'https://learn.chatgpt.com/docs/',
 ];
 
