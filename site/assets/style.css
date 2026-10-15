@@ -283,6 +283,13 @@ h3.q .i { width: 1.5rem; height: 1.5rem; }
 .qa dt { font-weight: 650; margin-top: .7rem; }
 .qa dd { margin: 0; color: var(--muted); }
 
+/* What's new: a plain list, newest first (info, so no boxes) */
+.changes { list-style: none; margin: 0; padding: 0; display: grid; gap: 1.1rem; }
+.changes h3 { font-size: 1.05rem; display: flex; align-items: baseline; gap: .6rem; }
+.changes h3 small { color: var(--muted); font-weight: 500; font-size: .9rem; }
+.changes ul { margin: .35rem 0 0; padding-left: 1.2rem; color: var(--muted); display: grid; gap: .2rem; }
+.changes > li:not(:first-child) { opacity: .8; }
+
 .safe { background: var(--surface); border-radius: var(--radius); padding: 1.1rem 1.2rem; display: grid; gap: .4rem; align-content: start; }
 .safe .i { width: 2rem; height: 2rem; }
 .safe h3 { font-size: 1.05rem; }
