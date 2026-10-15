@@ -1,5 +1,5 @@
 {
-  "_help": "AI tip cards and videos for the AI tips page (only on the AI tips page; home has just one link to it). Tip: id (unique, kebab-case), icon (a name in tools/build-icons.mjs), color (blue|green|amber|pink|violet|teal|red), title (a short question, Tyler 2026-10-14), text (one short line (under ~10 words), plain language), optional try (an example to copy), optional link {href, label} (https://... or a site path like speech-transcriber/). Video: title, url (https://...), optional by, length (e.g. 6 min). Keep words few.",
+  "_help": "AI tip cards and videos for the AI tips page (only on the AI tips page; home has just one link to it). Tip: id (unique, kebab-case), icon (a name in tools/build-icons.mjs), color (blue|green|amber|pink|violet|teal|red), title (a short question, Tyler 2026-10-14), text (one short line (under ~10 words), plain language), optional img {src (site path), alt} (a picture the tip talks about), optional try (an example to copy), optional link {href, label} (https://... or a site path like speech-transcriber/). Video: title, url (https://...), optional by, length (e.g. 6 min). Keep words few.",
   "tips": [
     {
       "id": "talk-normally",
@@ -15,7 +15,11 @@
       "color": "teal",
       "title": "Can it see pictures?",
       "text": "Snap it, then ask about it.",
-      "try": "What does this letter want me to do? Explain simply."
+      "try": "What does this letter want me to do? Explain simply.",
+      "img": {
+        "src": "assets/img/examples/letter.jpg",
+        "alt": "Photo of a letter"
+      }
     },
     {
       "id": "double-check",
@@ -54,7 +58,7 @@
       "icon": "microphone",
       "color": "blue",
       "title": "Tired of typing?",
-      "text": "Phone: tap the mic. Computer: Speech Transcriber.",
+      "text": "Tap the microphone in ChatGPT, or use Speech Transcriber.",
       "link": {
         "href": "speech-transcriber/",
         "label": "Get Speech Transcriber"

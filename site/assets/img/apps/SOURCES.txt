@@ -1,0 +1,5 @@
+App logos (trademarks of their owners, shown only to say Speech Transcriber works in these apps):
+- Iconify "logos" (CC0-1.0): gmail, teams, messenger, whatsapp, discord, slack, skype, chatgpt
+- Iconify "vscode-icons" (MIT): word, outlook
+- Iconify "simple-icons" (CC0-1.0): google-docs, messages
+Rebuild: scratchpad extract script pattern documented in family-site/CLAUDE.md.

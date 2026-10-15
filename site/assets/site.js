@@ -93,6 +93,7 @@ function tipCard(t) {
   return el('article', { class: 'tip', id: `tip-${t.id}` },
     el('div', { class: 'tip-head' }, el('span', { class: `tile c-${t.color || 'blue'}` }, icon(t.icon)), el('h3', {}, t.title)),
     el('p', {}, t.text),
+    t.img && /^assets\/img\//.test(t.img.src) ? el('img', { class: 'tip-img', src: new URL(`../${t.img.src}`, import.meta.url).href, alt: t.img.alt || '', loading: 'lazy' }) : null,
     t.try ? el('div', { class: 'try' }, el('q', {}, t.try), copyButton(t.try)) : null,
     link);
 }

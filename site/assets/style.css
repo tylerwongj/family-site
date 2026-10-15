@@ -142,20 +142,16 @@ section { scroll-margin-top: 80px; }
 .learn-line a { display: inline-flex; align-items: center; gap: .35rem; font-weight: 600; padding: .5rem; }
 
 /* App logos: what Speech Transcriber works in (brand colours only here) */
-.app-logo { display: inline-grid; place-items: center; width: 2.6rem; height: 2.6rem; border-radius: 12px; background: var(--surface-2); flex: none; color: var(--muted); }
-.app-logo .i { width: 1.6rem; height: 1.6rem; }
-.b-google { color: #4285f4; } .b-word { color: #4a8ef0; } .b-outlook { color: #1a9be6; } .b-teams { color: #8b8cf0; }
-.b-messenger { color: #a35cff; } .b-whatsapp { color: #25d366; } .b-discord { color: #7b86ff; } .b-slack { color: #e8467c; }
-.b-skype { color: #00aff0; } .b-openai { color: var(--text); }
+.app-logo { display: inline-grid; place-items: center; width: 2.6rem; height: 2.6rem; border-radius: 12px; background: #fff; flex: none; box-shadow: 0 1px 3px rgb(0 0 0 / .3); }
+.app-logo img { width: 62%; height: 62%; object-fit: contain; }
 .logo-strip { grid-column: 1 / -1; display: flex; flex-wrap: wrap; align-items: center; gap: .45rem; }
 .logo-strip .app-logo { width: 2.2rem; height: 2.2rem; border-radius: 10px; }
-.logo-strip .app-logo .i { width: 1.3rem; height: 1.3rem; }
 .logo-more { color: var(--muted); font-weight: 600; font-size: .9rem; margin-left: .2rem; }
 .app-grid-logos { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(5rem, 1fr)); gap: 1rem .5rem; }
 .app-grid-logos li { display: grid; justify-items: center; gap: .4rem; font-size: .9rem; font-weight: 600; text-align: center; }
 .app-grid-logos .app-logo { width: 3.2rem; height: 3.2rem; border-radius: 14px; }
-.app-grid-logos .app-logo .i { width: 2rem; height: 2rem; }
 .app-grid-logos .more { color: var(--muted); }
+.app-grid-logos .more .app-logo { background: var(--surface-2); box-shadow: none; }
 
 /* AI tips page: question headings, sub-questions inside a section */
 .lead-line { color: var(--muted); margin: -.5rem 0 1rem; font-size: 1.05rem; }
@@ -164,6 +160,7 @@ h3.q { display: flex; align-items: center; gap: .55rem; font-size: 1.2rem; margi
 h3.q .i { width: 1.5rem; height: 1.5rem; }
 
 /* Tips */
+.tip-img { width: 100%; max-width: 220px; aspect-ratio: 1; object-fit: cover; border-radius: 12px; }
 .tip-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 300px), 1fr)); gap: 1rem; }
 .tip { background: var(--surface); border-radius: var(--radius); padding: 1.25rem; display: grid; gap: .6rem; align-content: start; }
 .tip-head { display: flex; align-items: center; gap: .6rem; }
