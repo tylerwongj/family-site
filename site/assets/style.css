@@ -122,11 +122,7 @@ section { scroll-margin-top: 80px; }
 .msg.you { justify-self: end; background: var(--accent); color: var(--accent-ink); border-bottom-right-radius: 4px; }
 .msg.ai { justify-self: start; background: var(--surface-2); border-bottom-left-radius: 4px; }
 .photo { display: flex; align-items: center; gap: .4rem; font-size: .85rem; font-weight: 700; opacity: .85; margin-bottom: .2rem; }
-.start { display: flex; align-items: center; gap: 1rem; margin-top: 1rem; background: var(--green); color: #07130c; border-radius: var(--radius); padding: 1rem 1.25rem; transition: transform .15s ease, filter .15s ease; }
-.start:hover { text-decoration: none; transform: translateY(-2px); filter: brightness(1.06); }
-.start b { display: block; font-size: 1.15rem; }
-.start small { display: block; font-size: .95rem; opacity: .85; }
-.start .out { margin-left: auto; }
+.page-title { font-size: clamp(1.7rem, 4.5vw, 2.4rem); letter-spacing: -.02em; display: flex; align-items: center; gap: .6rem; margin-bottom: 1rem; }
 .link-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr)); gap: 1rem; }
 .link-grid .guide-card { margin-bottom: 0; }
 
