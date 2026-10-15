@@ -23,10 +23,19 @@ test('site has the expected pages', () => {
   assert.deepEqual(rel, ['ai-tips/computer-use/index.html', 'ai-tips/index.html', 'index.html', 'speech-transcriber/index.html']);
 });
 
-test('home page tip count matches tips.json', () => {
-  const { tips } = JSON.parse(readFileSync(join(SITE, 'data/tips.json'), 'utf8'));
+test('home page: apps only, with one link to the AI page at the bottom (Tyler 2026-10-14)', () => {
   const home = readFileSync(join(SITE, 'index.html'), 'utf8');
-  assert.match(home, new RegExp(`<h3>${tips.length} quick AI tips</h3>`), `home page should say "${tips.length} quick AI tips"`);
+  const main = home.slice(home.indexOf('<main'), home.indexOf('</main>'));
+  assert.doesNotMatch(main, /class="(example|tip|chat)\b/, 'AI examples and tips live on the AI tips page, not home');
+  assert.match(main, /<a class="learn-card" href="ai-tips\/">[\s\S]*Want to learn how to improve your life with AI\?/);
+  assert.ok(main.lastIndexOf('learn-card') > main.lastIndexOf('app-card'), 'AI link comes after the apps');
+});
+
+test('example chats that mention a photo show the photo', () => {
+  const tipsPage = readFileSync(join(SITE, 'ai-tips/index.html'), 'utf8');
+  for (const [, msg] of tipsPage.matchAll(/<p class="msg you">([\s\S]*?)<\/p>/g)) {
+    if (/\b(this|letter|photo)\b/i.test(msg.replace(/<[^>]+>/g, ''))) assert.match(msg, /<img class="snap"/, `needs its picture: ${msg.replace(/<[^>]+>/g, '').trim()}`);
+  }
 });
 
 for (const page of pages) {
@@ -78,7 +87,7 @@ test('tips.json: every card is complete and uses real icons and safe links', () 
     assert.ok(symbols.has(`i-${t.icon}`), `tip ${t.id}: no icon ${t.icon} (add it in tools/build-icons.mjs)`);
     assert.ok(['blue', 'green', 'amber', 'pink', 'violet', 'teal', 'red'].includes(t.color), `tip ${t.id}: color`);
     assert.ok(t.title && t.title.length <= 40, `tip ${t.id}: short title`);
-    assert.ok(t.text && t.text.length <= 160, `tip ${t.id}: 1-2 short sentences`);
+    assert.ok(t.text && t.text.length <= 60, `tip ${t.id}: one short line`);
     if (t.link) {
       assert.ok(t.link.label);
       const local = !t.link.href.startsWith('https://');

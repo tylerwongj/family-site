@@ -106,17 +106,22 @@ section { scroll-margin-top: 80px; }
 .app-card h3 { font-size: 1.3rem; }
 .app-card p { color: var(--muted); }
 .app-card .tags { display: flex; gap: .75rem; margin-top: .4rem; color: var(--muted); font-size: .9rem; font-weight: 600; }
-.app-pic { display: flex; align-items: center; gap: .75rem; background: var(--surface-2); border-radius: 12px; padding: .75rem 1rem; }
-.app-pic img { width: auto; height: 36px; }
-.typed-line { font-weight: 600; white-space: nowrap; }
-.typed-line::after { content: ""; display: inline-block; width: 2px; height: 1.1em; background: var(--accent); margin-left: 2px; vertical-align: -.2em; }
+/* Home: "you say it -> it types it" picture on the app card */
+.talk-type { display: flex; align-items: center; gap: .6rem; background: var(--surface-2); border-radius: 14px; padding: .9rem 1rem; }
+.tt-step { flex: 1 1 0; min-width: 0; display: grid; grid-template-rows: auto 1fr auto; justify-items: center; align-items: center; gap: .45rem; text-align: center; align-self: stretch; }
+.tt-step small { color: var(--muted); font-weight: 700; font-size: .8rem; }
+.tt-arrow { color: var(--muted); flex: none; }
+.say { background: color-mix(in srgb, var(--pink) 18%, var(--surface)); border-radius: 16px 16px 16px 4px; padding: .45rem .75rem; font-weight: 650; }
+.say::before { content: "“"; } .say::after { content: "”"; }
+.textbox { background: var(--bg); border: 1px solid var(--line); border-radius: 8px; padding: .45rem .7rem; font-weight: 600; text-align: left; }
+.textbox::after { content: ""; display: inline-block; width: 2px; height: 1.1em; background: var(--accent); margin-left: 2px; vertical-align: -.2em; }
 .app-card .go { grid-column: 1 / -1; display: flex; align-items: center; justify-content: center; gap: .4rem; background: var(--accent); color: var(--accent-ink); font-weight: 700; border-radius: 12px; padding: .8rem; font-size: 1.05rem; }
 /* Home: example chats (pictures of what AI does; not clickable, so no border) */
 .example-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 420px), 1fr)); gap: 1rem; }
 #why .example-grid { grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); } /* 3 examples: one row */
 .example { background: var(--surface); border-radius: var(--radius); padding: 1.1rem 1.2rem 1.2rem; display: grid; gap: .8rem; align-content: start; }
 .example h3 { display: flex; align-items: center; gap: .55rem; font-size: 1.1rem; }
-.example h3 .i { width: 1.6rem; height: 1.6rem; }
+.snap { display: block; width: 100%; max-width: 240px; border-radius: 10px; margin-bottom: .45rem; }
 .chat { display: grid; gap: .5rem; font-size: .97rem; }
 .msg { max-width: 88%; padding: .55rem .8rem; border-radius: 16px; line-height: 1.4; }
 .msg.you { justify-self: end; background: var(--accent); color: var(--accent-ink); border-bottom-right-radius: 4px; }
@@ -126,11 +131,23 @@ section { scroll-margin-top: 80px; }
 .link-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr)); gap: 1rem; }
 .link-grid .guide-card { margin-bottom: 0; }
 
+/* Icon tiles: a coloured icon on a soft square of its own colour (set the colour with c-*) */
+.tile { display: inline-grid; place-items: center; width: 2.6rem; height: 2.6rem; border-radius: 12px; background: color-mix(in srgb, currentColor 16%, transparent); flex: none; }
+.tile .i { width: 1.55rem; height: 1.55rem; }
+.tile-lg { width: 3.4rem; height: 3.4rem; border-radius: 16px; }
+.tile-lg .i { width: 2.1rem; height: 2.1rem; }
+
+/* Home: the one link to the AI pages, at the bottom */
+.learn-card { display: flex; align-items: center; gap: 1rem; background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 1.1rem 1.25rem; color: var(--text); box-shadow: var(--shadow); transition: border-color .15s ease, transform .15s ease; }
+.learn-card:hover { border-color: var(--amber); transform: translateY(-2px); text-decoration: none; }
+.learn-text { font-size: 1.25rem; font-weight: 700; line-height: 1.3; }
+.learn-card .arrow { margin-left: auto; color: var(--muted); }
+
 /* Tips */
 .tip-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 300px), 1fr)); gap: 1rem; }
 .tip { background: var(--surface); border-radius: var(--radius); padding: 1.25rem; display: grid; gap: .6rem; align-content: start; }
 .tip-head { display: flex; align-items: center; gap: .6rem; }
-.tip-head .i { width: 2rem; height: 2rem; }
+
 .tip h3 { font-size: 1.1rem; }
 .tip p { color: var(--muted); }
 .try { display: flex; align-items: flex-start; gap: .5rem; background: var(--surface-2); border-radius: 12px; padding: .6rem .6rem .6rem .8rem; font-size: .95rem; }
@@ -168,8 +185,10 @@ section { scroll-margin-top: 80px; }
 /* How it works: three real pictures of the app's bubble, a few words under each */
 .how { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr)); gap: 1rem; }
 .how li { display: grid; gap: .75rem; justify-items: center; text-align: center; }
-.how-pic { width: 100%; height: 132px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: .6rem; background: var(--surface-2); border-radius: var(--radius); padding: 1rem; }
+.how-pic { width: 100%; min-height: 132px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: .6rem; background: var(--surface-2); border-radius: var(--radius); padding: 1rem; }
 .how-pic img { width: auto; height: 48px; }
+.say-row { display: flex; align-items: center; gap: .5rem; }
+.say-row .tile { width: 2.2rem; height: 2.2rem; }
 .how p { font-weight: 650; font-size: 1.05rem; }
 .mac-key { display: flex; align-items: center; justify-content: center; gap: .45rem; color: var(--muted); margin-top: 1rem; }
 
@@ -283,7 +302,5 @@ footer span { display: inline-flex; align-items: center; gap: .4rem; }
   .app-hero img { width: 72px; height: 72px; }
   .app-hero .lead { font-size: 1.05rem; }
   .app-card { grid-template-columns: minmax(0, 1fr); }
-  .app-pic { flex-direction: column; }
-  .how-pic { height: 112px; }
   .hero p { font-size: 1.05rem; }
 }

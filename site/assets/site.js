@@ -91,7 +91,7 @@ function tipCard(t) {
     ? el('a', { class: 'more-link', href: resolveLink(t.link.href), ...(t.link.href.startsWith('https://') ? { target: '_blank', rel: 'noopener' } : {}) }, t.link.label, icon(t.link.href.startsWith('https://') ? 'arrow-square-out' : 'arrow-right'))
     : null;
   return el('article', { class: 'tip', id: `tip-${t.id}` },
-    el('div', { class: 'tip-head' }, icon(t.icon, `c-${t.color || 'blue'}`), el('h3', {}, t.title)),
+    el('div', { class: 'tip-head' }, el('span', { class: `tile c-${t.color || 'blue'}` }, icon(t.icon)), el('h3', {}, t.title)),
     el('p', {}, t.text),
     t.try ? el('div', { class: 'try' }, el('q', {}, t.try), copyButton(t.try)) : null,
     link);

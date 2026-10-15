@@ -1,0 +1,7 @@
+A realistic smartphone photo, taken from above, of a single printed paper letter lying on a wooden kitchen table, slightly angled, soft daylight. Square 1:1. The letter is a plain, made-up utility bill reminder (fictional company, no real logos). Large clear printed text, spelled exactly:
+Top left, bold: "Valley Water Co."
+Heading: "PAYMENT REMINDER"
+Line: "Amount due: $42.00"
+Line: "Please pay by: Nov 3"
+Small line: "Questions? Call 555-0142"
+Some short grey filler lines of small body text. No other readable words, no people, no hands, no real brand names.

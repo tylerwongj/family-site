@@ -1,12 +1,12 @@
 {
-  "_help": "AI tip cards and videos for the AI tips page (the home page links to it as 'N quick AI tips'; npm test checks N matches). Tip: id (unique, kebab-case), icon (a name in tools/build-icons.mjs), color (blue|green|amber|pink|violet|teal|red), title (a few words), text (1-2 short sentences, plain language), optional try (an example to copy), optional link {href, label} (https://... or a site path like speech-transcriber/). Video: title, url (https://...), optional by, length (e.g. 6 min). Keep words few.",
+  "_help": "AI tip cards and videos for the AI tips page (only on the AI tips page; home has just one link to it). Tip: id (unique, kebab-case), icon (a name in tools/build-icons.mjs), color (blue|green|amber|pink|violet|teal|red), title (a few words), text (one short line (under ~10 words), plain language), optional try (an example to copy), optional link {href, label} (https://... or a site path like speech-transcriber/). Video: title, url (https://...), optional by, length (e.g. 6 min). Keep words few.",
   "tips": [
     {
       "id": "talk-normally",
       "icon": "chat-circle-text",
       "color": "blue",
       "title": "Talk to it like a helpful friend",
-      "text": "Say what you want, who it's for and how long. More detail, better answer.",
+      "text": "Say what, who for, and how long.",
       "try": "Write a short thank-you note to my neighbor for watering my plants. Warm, 3 sentences."
     },
     {
@@ -14,7 +14,7 @@
       "icon": "camera",
       "color": "teal",
       "title": "Show it a photo",
-      "text": "Snap a menu, a plant, a confusing letter or an error message, then ask about it.",
+      "text": "Snap it, then ask about it.",
       "try": "What does this letter want me to do? Explain simply."
     },
     {
@@ -22,7 +22,7 @@
       "icon": "magnifying-glass",
       "color": "amber",
       "title": "Double-check what matters",
-      "text": "AI can sound sure and still be wrong. For health, money or legal things, check an official source or a professional.",
+      "text": "AI can be wrong. Check health, money and legal answers.",
       "try": "Where can I check this? Give me official sources."
     },
     {
@@ -30,7 +30,7 @@
       "icon": "question",
       "color": "violet",
       "title": "Let it ask you first",
-      "text": "Not sure how to ask? Tell it to interview you.",
+      "text": "Not sure how to ask? Let it interview you.",
       "try": "I want to plan a birthday party. Ask me questions one at a time, then make a plan."
     },
     {
@@ -38,7 +38,7 @@
       "icon": "sparkle",
       "color": "pink",
       "title": "Ask for simpler or shorter",
-      "text": "Too long or too technical? Just say so.",
+      "text": "Too long? Just say so.",
       "try": "Explain that again like I'm new to this, in 3 short bullet points."
     },
     {
@@ -46,7 +46,7 @@
       "icon": "chats-circle",
       "color": "green",
       "title": "Fix it in the same chat",
-      "text": "It remembers the conversation. Say what to change instead of starting over.",
+      "text": "Say what to change. Don't start over.",
       "try": "Good, but make it friendlier and cut the last part."
     },
     {
@@ -54,15 +54,18 @@
       "icon": "microphone",
       "color": "blue",
       "title": "Talk instead of typing",
-      "text": "On your phone, tap the microphone in the ChatGPT app. On your computer, Speech Transcriber types what you say.",
-      "link": { "href": "speech-transcriber/", "label": "Get Speech Transcriber" }
+      "text": "Phone: tap the mic. Computer: Speech Transcriber.",
+      "link": {
+        "href": "speech-transcriber/",
+        "label": "Get Speech Transcriber"
+      }
     },
     {
       "id": "secrets",
       "icon": "key",
       "color": "red",
       "title": "Never share secrets",
-      "text": "No passwords, bank or card numbers, or Social Security numbers. Ever."
+      "text": "No passwords, card numbers or Social Security numbers."
     }
   ],
   "videos": []
