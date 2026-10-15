@@ -37,6 +37,13 @@ test('a missing or odd digest means no fingerprint shown, not a wrong one', () =
   assert.equal(r.assets[1].sha256, null);
 });
 
+test('NVIDIA build is picked up as its own file, never as the main Windows one', () => {
+  const r = parseRelease(release([asset('SpeechTranscriber-Setup-0.3.34-nvidia.exe', { size: 1_234_000_000 }), asset('SpeechTranscriber-Setup-0.3.34.exe')]));
+  assert.equal(r.assets.find((a) => a.platform === 'windows').file, 'SpeechTranscriber-Setup-0.3.34.exe');
+  assert.equal(r.assets.find((a) => a.platform === 'windows-nvidia').file, 'SpeechTranscriber-Setup-0.3.34-nvidia.exe');
+  assert.equal(parseRelease(release([asset('SpeechTranscriber-Setup-0.3.34.exe')])).assets.some((a) => a.platform === 'windows-nvidia'), false);
+});
+
 test('only Windows installer published: Mac stays "coming soon"', () => {
   const r = parseRelease(release([asset('SpeechTranscriber-Setup-0.3.0.exe')]));
   assert.deepEqual(r.assets.map((a) => a.platform), ['windows']);
@@ -92,6 +99,6 @@ test('asks GitHub at most every 10 minutes', async () => {
 });
 
 test('the local-preview sample parses like a real release', () => {
-  assert.equal(SAMPLE.release.assets.length, 2);
+  assert.equal(SAMPLE.release.assets.length, 3);
   assert.equal(SAMPLE.release.version, '0.3.0');
 });

@@ -203,7 +203,7 @@ section { scroll-margin-top: 80px; }
 /* Download */
 .release-meta { color: var(--muted); margin: -.5rem 0 1rem; min-height: 1.5em; }
 .dl-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr)); gap: 1rem; }
-.dl { position: relative; display: grid; gap: .75rem; background: var(--surface-2); border: 2px solid transparent; border-radius: var(--radius); padding: 1.25rem; }
+.dl { position: relative; display: grid; align-content: start; gap: .75rem; background: var(--surface-2); border: 2px solid transparent; border-radius: var(--radius); padding: 1.25rem; }
 .dl.mine { border-color: var(--accent); }
 .dl-head { display: flex; align-items: center; gap: .75rem; }
 .dl-head .i { width: 2.4rem; height: 2.4rem; }
@@ -213,6 +213,7 @@ section { scroll-margin-top: 80px; }
 .btn { display: flex; align-items: center; justify-content: center; gap: .5rem; min-height: 52px; border-radius: 12px; font-weight: 700; font-size: 1.05rem; background: var(--accent); color: var(--accent-ink); border: 0; padding: .6rem 1rem; cursor: pointer; }
 .btn:hover { text-decoration: none; filter: brightness(1.08); }
 .btn[aria-disabled="true"] { background: var(--line); color: var(--muted); cursor: default; filter: none; }
+.alt-dl { display: inline-flex; align-items: center; justify-content: center; gap: .4rem; font-size: .92rem; font-weight: 600; min-height: 44px; text-align: center; }
 .dl small { color: var(--muted); text-align: center; min-height: 1.5em; }
 .check-file { margin-top: 1.25rem; border-top: 1px solid var(--line); padding-top: 1rem; }
 .check-file summary { cursor: pointer; font-weight: 650; display: flex; align-items: center; gap: .5rem; list-style: none; min-height: 44px; }

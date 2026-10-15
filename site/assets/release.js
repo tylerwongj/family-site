@@ -9,6 +9,8 @@ const DOWNLOAD_PREFIX = `https://github.com/${REPO}/releases/download/`;
 // Same files and wording as PLATFORMS in speech-transcriber/tools/release_manifest.py.
 export const PLATFORMS = [
   { platform: 'windows', label: 'Windows', icon: 'windows-logo', file: /^SpeechTranscriber-Setup-[\d.]+\.exe$/i, min_os: 'Windows 10 or 11 (64-bit)' },
+  // Optional second Windows file from 0.3.34: CUDA build for NVIDIA cards (big). Shown as a small link under the Windows button.
+  { platform: 'windows-nvidia', label: 'Windows (NVIDIA)', icon: 'windows-logo', file: /^SpeechTranscriber-Setup-[\d.]+-nvidia\.exe$/i, min_os: 'Windows 10 or 11 (64-bit), NVIDIA graphics card' },
   { platform: 'macos', label: 'Mac', icon: 'apple-logo', file: /^SpeechTranscriber-[\d.]+-macos-arm64\.dmg$/i, min_os: 'macOS 12 or newer, Apple chip (M1 or later)' },
 ];
 
@@ -79,6 +81,7 @@ export const SAMPLE = {
     published_at: '2026-10-12T20:00:00Z',
     assets: [
       { name: 'SpeechTranscriber-Setup-0.3.0.exe', size: 199_004_632, digest: `sha256:${'0'.repeat(64)}`, browser_download_url: `${DOWNLOAD_PREFIX}sample/SpeechTranscriber-Setup-0.3.0.exe` },
+      { name: 'SpeechTranscriber-Setup-0.3.0-nvidia.exe', size: 1_200_000_000, digest: `sha256:${'0'.repeat(64)}`, browser_download_url: `${DOWNLOAD_PREFIX}sample/SpeechTranscriber-Setup-0.3.0-nvidia.exe` },
       { name: 'SpeechTranscriber-0.3.0-macos-arm64.dmg', size: 266_715_006, digest: `sha256:${'0'.repeat(64)}`, browser_download_url: `${DOWNLOAD_PREFIX}sample/SpeechTranscriber-0.3.0-macos-arm64.dmg` },
     ],
   }),

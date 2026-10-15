@@ -35,6 +35,13 @@ for (const card of document.querySelectorAll('.dl')) {
   }
 }
 
+// NVIDIA graphics cards: a bigger, faster Windows build, offered as a plain link only when the release has it
+const nvidia = result.state === 'ready' ? result.release.assets.find((a) => a.platform === 'windows-nvidia') : null;
+if (nvidia) {
+  document.querySelector('.dl[data-platform="windows"]').append(
+    el('a', { class: 'alt-dl', href: nvidia.url }, icon('download-simple'), `Have an NVIDIA graphics card? Faster version (${formatSize(nvidia.size)})`));
+}
+
 if (result.state === 'ready') {
   const { version, released, assets } = result.release;
   meta.textContent = [version && `Version ${version}`, released && formatDate(released), 'Free'].filter(Boolean).join(' · ');
