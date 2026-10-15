@@ -142,7 +142,9 @@ section { scroll-margin-top: 80px; }
 .learn-line a { display: inline-flex; align-items: center; gap: .35rem; font-weight: 600; padding: .5rem; }
 
 /* App logos: what Speech Transcriber works in (brand colours only here) */
-.app-logo { display: inline-grid; place-items: center; width: 2.6rem; height: 2.6rem; border-radius: 12px; background: #fff; flex: none; box-shadow: 0 1px 3px rgb(0 0 0 / .3); }
+.app-logo { display: inline-grid; place-items: center; width: 2.6rem; height: 2.6rem; border-radius: 12px; background: var(--surface-2); flex: none; }
+:root[data-theme="light"] .app-logo { background: #fff; box-shadow: 0 1px 3px rgb(20 30 50 / .15); }
+:root:not([data-theme="light"]) .app-logo img[src$="chatgpt.svg"] { filter: invert(1); } /* black logo on dark */
 .app-logo img { width: 62%; height: 62%; object-fit: contain; }
 .logo-strip { grid-column: 1 / -1; display: flex; flex-wrap: wrap; align-items: center; gap: .45rem; }
 .logo-strip .app-logo { width: 2.2rem; height: 2.2rem; border-radius: 10px; }
