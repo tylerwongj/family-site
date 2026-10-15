@@ -13,7 +13,8 @@ key magnifying-glass chats-circle robot wifi-high hourglass-medium book-open-tex
 prohibit gear-six clipboard-text monitor-play hand-tap user-circle-check package
 arrow-counter-clockwise x-circle currency-dollar
 envelope-simple cooking-pot printer file-text folder-open table
-user-sound text-aa arrow-down chef-hat hand-heart magic-wand`.split(/\s+/);
+user-sound text-aa arrow-down chef-hat hand-heart magic-wand
+google-logo google-drive-logo microsoft-word-logo microsoft-outlook-logo messenger-logo whatsapp-logo discord-logo slack-logo skype-logo microsoft-teams-logo open-ai-logo question`.split(/\s+/);
 
 const src = process.argv[2];
 if (!src) throw new Error('Usage: node tools/build-icons.mjs <selection.json>');

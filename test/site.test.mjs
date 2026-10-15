@@ -27,14 +27,16 @@ test('home page: apps only, with one link to the AI page at the bottom (Tyler 20
   const home = readFileSync(join(SITE, 'index.html'), 'utf8');
   const main = home.slice(home.indexOf('<main'), home.indexOf('</main>'));
   assert.doesNotMatch(main, /class="(example|tip|chat)\b/, 'AI examples and tips live on the AI tips page, not home');
-  assert.match(main, /<a class="learn-card" href="ai-tips\/">[\s\S]*Want to learn how to improve your life with AI\?/);
-  assert.ok(main.lastIndexOf('learn-card') > main.lastIndexOf('app-card'), 'AI link comes after the apps');
+  assert.match(main, /<p class="learn-line"><a href="ai-tips\/">Want to learn how to improve your life with AI\?/);
+  assert.ok(main.lastIndexOf('learn-line') > main.lastIndexOf('app-card'), 'AI link comes after the apps');
 });
 
 test('example chats that mention a photo show the photo', () => {
   const tipsPage = readFileSync(join(SITE, 'ai-tips/index.html'), 'utf8');
   for (const [, msg] of tipsPage.matchAll(/<p class="msg you">([\s\S]*?)<\/p>/g)) {
-    if (/\b(this|letter|photo)\b/i.test(msg.replace(/<[^>]+>/g, ''))) assert.match(msg, /<img class="snap"/, `needs its picture: ${msg.replace(/<[^>]+>/g, '').trim()}`);
+    const text = msg.replace(/<[^>]+>/g, '').trim();
+    if (text.startsWith('@Computer')) continue; // computer-use asks point at what's on the screen
+    if (/\b(this|these|letter|photo)\b/i.test(text)) assert.match(msg, /<img class="snap"/, `needs its picture: ${msg.replace(/<[^>]+>/g, '').trim()}`);
   }
 });
 

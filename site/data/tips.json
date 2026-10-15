@@ -1,11 +1,11 @@
 {
-  "_help": "AI tip cards and videos for the AI tips page (only on the AI tips page; home has just one link to it). Tip: id (unique, kebab-case), icon (a name in tools/build-icons.mjs), color (blue|green|amber|pink|violet|teal|red), title (a few words), text (one short line (under ~10 words), plain language), optional try (an example to copy), optional link {href, label} (https://... or a site path like speech-transcriber/). Video: title, url (https://...), optional by, length (e.g. 6 min). Keep words few.",
+  "_help": "AI tip cards and videos for the AI tips page (only on the AI tips page; home has just one link to it). Tip: id (unique, kebab-case), icon (a name in tools/build-icons.mjs), color (blue|green|amber|pink|violet|teal|red), title (a short question, Tyler 2026-10-14), text (one short line (under ~10 words), plain language), optional try (an example to copy), optional link {href, label} (https://... or a site path like speech-transcriber/). Video: title, url (https://...), optional by, length (e.g. 6 min). Keep words few.",
   "tips": [
     {
       "id": "talk-normally",
       "icon": "chat-circle-text",
       "color": "blue",
-      "title": "Talk to it like a helpful friend",
+      "title": "How do I get a better answer?",
       "text": "Say what, who for, and how long.",
       "try": "Write a short thank-you note to my neighbor for watering my plants. Warm, 3 sentences."
     },
@@ -13,7 +13,7 @@
       "id": "photo",
       "icon": "camera",
       "color": "teal",
-      "title": "Show it a photo",
+      "title": "Can it see pictures?",
       "text": "Snap it, then ask about it.",
       "try": "What does this letter want me to do? Explain simply."
     },
@@ -21,7 +21,7 @@
       "id": "double-check",
       "icon": "magnifying-glass",
       "color": "amber",
-      "title": "Double-check what matters",
+      "title": "Is it always right?",
       "text": "AI can be wrong. Check health, money and legal answers.",
       "try": "Where can I check this? Give me official sources."
     },
@@ -29,23 +29,23 @@
       "id": "ask-me-questions",
       "icon": "question",
       "color": "violet",
-      "title": "Let it ask you first",
-      "text": "Not sure how to ask? Let it interview you.",
+      "title": "Not sure how to ask?",
+      "text": "Let it interview you.",
       "try": "I want to plan a birthday party. Ask me questions one at a time, then make a plan."
     },
     {
       "id": "simpler",
       "icon": "sparkle",
       "color": "pink",
-      "title": "Ask for simpler or shorter",
-      "text": "Too long? Just say so.",
+      "title": "Answer too long or confusing?",
+      "text": "Just say so.",
       "try": "Explain that again like I'm new to this, in 3 short bullet points."
     },
     {
       "id": "same-chat",
       "icon": "chats-circle",
       "color": "green",
-      "title": "Fix it in the same chat",
+      "title": "Not quite right?",
       "text": "Say what to change. Don't start over.",
       "try": "Good, but make it friendlier and cut the last part."
     },
@@ -53,7 +53,7 @@
       "id": "voice",
       "icon": "microphone",
       "color": "blue",
-      "title": "Talk instead of typing",
+      "title": "Tired of typing?",
       "text": "Phone: tap the mic. Computer: Speech Transcriber.",
       "link": {
         "href": "speech-transcriber/",
@@ -64,7 +64,7 @@
       "id": "secrets",
       "icon": "key",
       "color": "red",
-      "title": "Never share secrets",
+      "title": "What should I never share?",
       "text": "No passwords, card numbers or Social Security numbers."
     }
   ],
