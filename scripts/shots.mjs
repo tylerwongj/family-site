@@ -48,6 +48,8 @@ for (const size of SIZES) {
     });
     await page.goto(BASE + path, { waitUntil: 'networkidle' });
     await page.waitForTimeout(400);
+    // Load every lazy picture, so the checks and screenshots see the whole page (a gap hid one, 2026-10-16)
+    await page.evaluate(() => Promise.all([...document.images].map((img) => { img.loading = 'eager'; return img.decode().catch(() => {}); })));
     const layout = await page.evaluate(() => {
       const W = innerWidth;
       const covered = [];
@@ -72,7 +74,8 @@ for (const size of SIZES) {
         if (r.width && (r.right > p.right + 1 || r.left < p.left - 1)) clipped.push(`picture sticks out: ${img.getAttribute('src').split('/').pop()}`);
         // A blurry picture: fewer real pixels than the screen shows (a 400 px phone photo of a Mac warning
         // looked "extremely bad", Tyler 2026-10-16). Needs at least 1.5x the shown width; SVGs are always sharp.
-        if (r.width && !/\.svg$/i.test(img.currentSrc) && img.naturalWidth < r.width * 1.5) clipped.push(`picture too blurry: ${img.getAttribute('src').split('/').pop()} (${img.naturalWidth}px shown at ${Math.round(r.width)}px)`);
+        // (naturalWidth 0 = a lazy picture not loaded yet: skip it)
+        if (r.width && img.naturalWidth && !/\.svg$/i.test(img.currentSrc) && img.naturalWidth < r.width * 1.5) clipped.push(`picture too blurry: ${img.getAttribute('src').split('/').pop()} (${img.naturalWidth}px shown at ${Math.round(r.width)}px)`);
       }
       return { overflowX: document.scrollingElement.scrollWidth - W, covered, clipped };
     });
