@@ -1,0 +1,4 @@
+{
+  "_help": "Read by Tyler's installed apps (Speech Transcriber's Send feedback). feedback_url = the feedback mailbox; change it here when the mailbox moves (e.g. to Cloudflare) and every installed app follows, no app update needed. Must start with https://.",
+  "feedback_url": "https://playfolk-feedback.onrender.com"
+}
