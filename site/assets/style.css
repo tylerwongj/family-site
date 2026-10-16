@@ -260,6 +260,10 @@ h3.q .i { width: 1.5rem; height: 1.5rem; }
 .steps li { display: grid; grid-template-columns: auto 1fr; gap: .9rem; align-items: start; }
 .steps h3 { font-size: 1.12rem; margin-bottom: .15rem; }
 .steps p { color: var(--muted); }
+/* Real screenshots of the warnings people will see, so they look expected, not sketchy */
+.real-shot { margin: .7rem 0 0; display: grid; gap: .4rem; max-width: 240px; }
+.real-shot img { width: 100%; height: auto; border-radius: 14px; }
+.real-shot figcaption { color: var(--muted); font-size: .85rem; }
 .num { counter-increment: step; display: grid; place-items: center; width: 2rem; height: 2rem; border-radius: 999px; background: color-mix(in srgb, var(--violet) 22%, transparent); color: var(--violet); font-weight: 800; flex: none; }
 .num::before { content: counter(step); }
 .pending-tag { display: inline-flex; align-items: center; gap: .35rem; font-size: .8rem; font-weight: 700; color: var(--muted); border: 1px dashed var(--muted); border-radius: 999px; padding: .15rem .6rem; background: var(--surface); }
