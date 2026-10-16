@@ -93,6 +93,7 @@ section { scroll-margin-top: 80px; }
 /* Plain facts: icon + words, deliberately NOT boxed, so they never look clickable */
 .facts { display: flex; flex-wrap: wrap; gap: .4rem 1.4rem; padding: 0; margin: 0; list-style: none; color: var(--muted); font-weight: 600; }
 .facts li { display: flex; align-items: center; gap: .4rem; }
+.facts .was { color: var(--muted); font-weight: 500; margin-right: .3rem; } /* the usual price, crossed out: "it's worth paying for" */
 
 /* Clickable cards (and only they) get a border, a shadow and a lift on hover */
 .app-card, .guide-card, .ext, .video { transition: border-color .15s ease, transform .15s ease, box-shadow .15s ease; }
