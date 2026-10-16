@@ -26,7 +26,7 @@ Tyler's small website for **family and friends** (not the public): downloads of 
 
 ## App pictures
 
-`site/assets/img/speech-transcriber/bubble-*.png` are the app's real bubble (recording, transcribing, typed), rendered by the app's own code at 2x (offscreen PySide6, `RecordingPill.show_status`, waited ~1.5 s so the label and tick finish animating, then cropped to the picture). Re-render them when the bubble's look changes. Install steps are text only: no placeholder pictures, and never drawn copies of Windows/Mac dialogs; a real screenshot (PNG/WebP, under 300 KB, no personal info) may be added under a step later.
+`site/assets/img/speech-transcriber/bubble-*.png` are the app's real bubble (recording, transcribing, typed), rendered by the app's own code at 2x (offscreen PySide6, `RecordingPill.show_status`, waited ~1.5 s so the label and tick finish animating, then cropped to the picture). Re-render them when the bubble's look changes. Install steps are text only: no placeholder pictures, and never drawn copies of Windows/Mac dialogs; a real screenshot (PNG/WebP, under 300 KB, no personal info) may be added under a step later. **Screenshot quality (Tyler 2026-10-16: a blurry phone photo with the cursor over "Move to Trash" looked "extremely bad"):** a crisp original screen capture (Mac: Cmd+Shift+4 then Space; Windows: Win+Shift+S), at least 2x the shown width, never enlarged, no cursor over a button, labelled "Real screenshot"; look at it full size before publishing. `npm run shots` fails a picture with fewer pixels than 1.5x its shown width (it can't see enlarging).
 
 ## Adding things
 

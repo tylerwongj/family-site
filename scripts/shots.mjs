@@ -70,6 +70,9 @@ for (const size of SIZES) {
         const r = img.getBoundingClientRect();
         const p = img.parentElement.getBoundingClientRect();
         if (r.width && (r.right > p.right + 1 || r.left < p.left - 1)) clipped.push(`picture sticks out: ${img.getAttribute('src').split('/').pop()}`);
+        // A blurry picture: fewer real pixels than the screen shows (a 400 px phone photo of a Mac warning
+        // looked "extremely bad", Tyler 2026-10-16). Needs at least 1.5x the shown width; SVGs are always sharp.
+        if (r.width && !/\.svg$/i.test(img.currentSrc) && img.naturalWidth < r.width * 1.5) clipped.push(`picture too blurry: ${img.getAttribute('src').split('/').pop()} (${img.naturalWidth}px shown at ${Math.round(r.width)}px)`);
       }
       return { overflowX: document.scrollingElement.scrollWidth - W, covered, clipped };
     });
