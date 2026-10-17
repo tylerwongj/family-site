@@ -66,22 +66,56 @@
   </div>
 
   <section id="download" class="card">
-    <h2><svg class="i c-blue" aria-hidden="true"><use href="../assets/icons.svg#i-download-simple"/></svg>Download</h2>
+    <h2><svg class="i c-blue" aria-hidden="true"><use href="../assets/icons.svg#i-download-simple"/></svg>Download &amp; install</h2>
+    <div class="tabs" role="tablist" data-tabs aria-label="Your computer">
+      <button type="button" role="tab" id="tab-windows" aria-controls="get-windows" aria-selected="true"><svg class="i" aria-hidden="true"><use href="../assets/icons.svg#i-windows-logo"/></svg>Windows</button>
+      <button type="button" role="tab" id="tab-macos" aria-controls="get-macos" aria-selected="false" tabindex="-1"><svg class="i" aria-hidden="true"><use href="../assets/icons.svg#i-apple-logo"/></svg>Mac</button>
+    </div>
     <p class="release-meta" id="release-meta">Checking for the newest version…</p>
-    <div class="dl-grid" id="dl-grid">
+
+    <div role="tabpanel" id="get-windows" aria-labelledby="tab-windows">
       <div class="dl" data-platform="windows">
         <div class="dl-head"><svg class="i c-blue" aria-hidden="true"><use href="../assets/icons.svg#i-windows-logo"/></svg><h3>Windows</h3></div>
         <p class="dl-os">Windows 10 or 11</p>
         <a class="btn" aria-disabled="true"><svg class="i" aria-hidden="true"><use href="../assets/icons.svg#i-hourglass-medium"/></svg><span>Checking…</span></a>
         <small></small>
       </div>
+      <h3 class="install-head"><svg class="i c-violet" aria-hidden="true"><use href="../assets/icons.svg#i-list-checks"/></svg>Install</h3>
+      <ol class="steps">
+        <li><span class="num"></span><div><h3>Open the file</h3><p>Double-click it in Downloads.</p></div></li>
+        <li><span class="num"></span><div><h3>Blue warning? It's OK</h3><p>Click “More info”, then “Run anyway”. Free apps get this once.</p></div></li>
+        <li><span class="num"></span><div><h3>Install, then wait once</h3><p>The first time, it downloads its speech model (a few minutes).</p></div></li>
+        <li><span class="num"></span><div><h3>Talk</h3><p>Press <span class="kbd">Right Alt</span>, talk, press it again. The app is the mic icon by the clock.</p></div></li>
+      </ol>
+    </div>
+
+    <div role="tabpanel" id="get-macos" aria-labelledby="tab-macos" hidden>
       <div class="dl" data-platform="macos">
         <div class="dl-head"><svg class="i" aria-hidden="true"><use href="../assets/icons.svg#i-apple-logo"/></svg><h3>Mac</h3></div>
         <p class="dl-os">Macs from 2020 on (Apple chip)</p>
         <a class="btn" aria-disabled="true"><svg class="i" aria-hidden="true"><use href="../assets/icons.svg#i-hourglass-medium"/></svg><span>Checking…</span></a>
         <small></small>
       </div>
+      <h3 class="install-head"><svg class="i c-violet" aria-hidden="true"><use href="../assets/icons.svg#i-list-checks"/></svg>Install <span class="muted">· about 2 minutes, only once</span></h3>
+      <ol class="steps">
+        <li><span class="num"></span><div><h3>Open the download</h3><p>When it says Done, click it.</p>
+          <figure class="real-shot wide"><img src="../assets/img/speech-transcriber/mac-0-downloaded.png" alt="The finished download: SpeechTranscriber macos-arm64.dmg, 253 MB, Done" width="586" height="125" loading="lazy"></figure></div></li>
+        <li><span class="num"></span><div><h3>Drag the app onto Applications</h3><p>Drag the blue mic icon onto the Applications folder.</p>
+          <figure class="real-shot wide"><img src="../assets/img/speech-transcriber/mac-1-drag.png" alt="The download window: Applications folder on the left, Speech Transcriber.app on the right" width="752" height="368" loading="lazy"></figure></div></li>
+        <li><span class="num"></span><div><h3>Open Speech Transcriber, then click Done</h3><p>Open it from Applications. The Mac says “Not Opened”: click <b>Done</b>, not “Move to Trash”. Every free app from outside the App Store gets this.</p>
+          <figure class="real-shot"><img src="../assets/img/speech-transcriber/mac-2-not-opened.png" alt="The Mac warning: Speech Transcriber.app Not Opened, with Move to Trash and Done buttons" width="530" height="600" loading="lazy"></figure></div></li>
+        <li><span class="num"></span><div><h3>Open System Settings</h3><p>Press <span class="kbd">⌘</span> <span class="kbd">Space</span>, type <b>system settings</b>, press <span class="kbd">Return</span>.</p>
+          <figure class="real-shot wide"><img src="../assets/img/speech-transcriber/mac-3-system-settings.png" alt="Spotlight search with system settings typed and System Settings.app at the top" width="728" height="316" loading="lazy"></figure></div></li>
+        <li><span class="num"></span><div><h3>Click Privacy &amp; Security</h3><p>In the list on the left.</p>
+          <figure class="real-shot"><img src="../assets/img/speech-transcriber/mac-4-privacy.png" alt="The System Settings sidebar with Privacy and Security highlighted" width="380" height="213" loading="lazy"></figure></div></li>
+        <li><span class="num"></span><div><h3>Scroll all the way down, click “Open Anyway”</h3><p>Next to “Speech Transcriber was blocked”. Then use Touch ID or your password.</p></div></li>
+        <li><span class="num"></span><div><h3>Open Speech Transcriber again</h3><p>From Applications. If it asks, click “Open Anyway” once more.</p></div></li>
+        <li><span class="num"></span><div><h3>Allow 3 things</h3><p><b>Microphone</b>: click “Allow”. <b>Input Monitoring</b> and <b>Accessibility</b>: click “Open System Settings”, then switch Speech Transcriber on.</p>
+          <figure class="real-shot"><img src="../assets/img/speech-transcriber/mac-5-microphone.png" alt="The Mac asking: Speech Transcriber.app would like to access the Microphone, with Don't Allow and Allow" width="532" height="530" loading="lazy"></figure></div></li>
+        <li><span class="num"></span><div><h3>Talk</h3><p>Press <span class="kbd">Right ⌘</span>, talk, press it again. There's no window: the app is a mic icon at the top right and a round bubble on your screen. No icon? The camera notch can hide it; Right ⌘ still works.</p></div></li>
+      </ol>
     </div>
+
     <p class="note"><svg class="i c-red" aria-hidden="true"><use href="../assets/icons.svg#i-x-circle"/></svg><span>Not for phones, tablets, Chromebooks or older Intel Macs.</span></p>
     <details class="check-file" id="check-file" hidden>
       <summary><svg class="i c-green" aria-hidden="true"><use href="../assets/icons.svg#i-fingerprint"/></svg>Check the download (optional)<svg class="i caret" aria-hidden="true"><use href="../assets/icons.svg#i-caret-down"/></svg></summary>
@@ -94,39 +128,17 @@
     </details>
   </section>
 
-  <section id="install">
-    <h2><svg class="i c-violet" aria-hidden="true"><use href="../assets/icons.svg#i-list-checks"/></svg>Install</h2>
-    <div class="tabs" role="tablist" data-tabs aria-label="Your computer">
-      <button type="button" role="tab" id="tab-windows" aria-controls="steps-windows" aria-selected="true"><svg class="i" aria-hidden="true"><use href="../assets/icons.svg#i-windows-logo"/></svg>Windows</button>
-      <button type="button" role="tab" id="tab-macos" aria-controls="steps-macos" aria-selected="false" tabindex="-1"><svg class="i" aria-hidden="true"><use href="../assets/icons.svg#i-apple-logo"/></svg>Mac</button>
-    </div>
-
-    <div role="tabpanel" id="steps-windows" aria-labelledby="tab-windows">
-      <ol class="steps">
-        <li><span class="num"></span><div><h3>Open the file</h3><p>Double-click it in Downloads.</p></div></li>
-        <li><span class="num"></span><div><h3>Blue warning? It's OK</h3><p>Click “More info”, then “Run anyway”. Free apps get this once.</p></div></li>
-        <li><span class="num"></span><div><h3>Install, then wait once</h3><p>The first time, it downloads its speech model (a few minutes).</p></div></li>
-      </ol>
-    </div>
-
-    <div role="tabpanel" id="steps-macos" aria-labelledby="tab-macos" hidden>
-      <ol class="steps">
-        <li><span class="num"></span><div><h3>Drag it to Applications</h3><p>Open the downloaded file and drag the app onto Applications.</p>
-          <figure class="real-shot wide"><img src="../assets/img/speech-transcriber/mac-1-drag.png" alt="The Speech Transcriber download window with Applications on the left and the app on the right" width="752" height="368" loading="lazy"><figcaption>Real screenshot</figcaption></figure></div></li>
-        <li><span class="num"></span><div><h3>“Not Opened”? Click Done</h3><p>Not “Move to Trash”. Every free app from outside the App Store gets this once.</p>
-          <figure class="real-shot"><img src="../assets/img/speech-transcriber/mac-2-not-opened.png" alt="The Mac warning: Speech Transcriber.app Not Opened, with Move to Trash and Done buttons" width="530" height="600" loading="lazy"><figcaption>Real screenshot</figcaption></figure></div></li>
-        <li><span class="num"></span><div><h3>Click “Open Anyway”</h3><p>System Settings → Privacy &amp; Security → scroll down.</p></div></li>
-        <li><span class="num"></span><div><h3>Open it again</h3><p>From Applications. Click “Open Anyway”, then use Touch ID or your password. Only the first time.</p></div></li>
-        <li><span class="num"></span><div><h3>Allow 3 things</h3><p>Microphone (click “Allow”), Input Monitoring and Accessibility (click “Open System Settings”, switch Speech Transcriber on).</p>
-          <figure class="real-shot"><img src="../assets/img/speech-transcriber/mac-5-microphone.png" alt="The Mac asking: Speech Transcriber.app would like to access the Microphone, with Don't Allow and Allow" width="532" height="530" loading="lazy"><figcaption>Real screenshot</figcaption></figure>
-          <p>Then press <span class="kbd">Right ⌘</span> and talk. There's no window: the app is a small mic icon at the top right and a round mic bubble on your screen. No icon? It can hide behind the camera notch when the top bar is full; the bubble and Right ⌘ still work.</p></div></li>
-      </ol>
-    </div>
-  </section>
-
   <section id="whats-new">
     <h2><svg class="i c-green" aria-hidden="true"><use href="../assets/icons.svg#i-sparkle"/></svg>What's new</h2>
     <ol class="changes">
+      <li>
+        <h3>0.3.36 <small>Oct 16, 2026</small></h3>
+        <ul>
+          <li>Mac: the first run asks for the microphone up front and never freezes.</li>
+          <li>Updates are one click: the app installs the new version and reopens by itself.</li>
+          <li>“Send feedback” in the menu goes straight to Tyler.</li>
+        </ul>
+      </li>
       <li>
         <h3>0.3.35 <small>Oct 15, 2026</small></h3>
         <ul>

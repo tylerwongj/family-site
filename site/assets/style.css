@@ -265,6 +265,11 @@ h3.q .i { width: 1.5rem; height: 1.5rem; }
 .real-shot img { width: 100%; height: auto; border-radius: 14px; }
 .real-shot.wide { max-width: 340px; }
 .real-shot figcaption { color: var(--muted); font-size: .85rem; }
+/* Download & install: the Windows/Mac picker on top switches the download and its steps together */
+#download [role="tabpanel"] { display: grid; gap: 1.25rem; }
+#download [role="tabpanel"][hidden] { display: none; }
+.install-head { display: flex; align-items: center; gap: .5rem; font-size: 1.25rem; margin-top: .5rem; }
+.install-head .muted { font-size: .95rem; font-weight: 600; }
 .num { counter-increment: step; display: grid; place-items: center; width: 2rem; height: 2rem; border-radius: 999px; background: color-mix(in srgb, var(--violet) 22%, transparent); color: var(--violet); font-weight: 800; flex: none; }
 .num::before { content: counter(step); }
 .pending-tag { display: inline-flex; align-items: center; gap: .35rem; font-size: .8rem; font-weight: 700; color: var(--muted); border: 1px dashed var(--muted); border-radius: 999px; padding: .15rem .6rem; background: var(--surface); }
@@ -335,5 +340,11 @@ footer span { display: inline-flex; align-items: center; gap: .4rem; }
   .app-hero img { width: 72px; height: 72px; }
   .app-hero .lead { font-size: 1.05rem; }
   .app-card { grid-template-columns: minmax(0, 1fr); }
+  /* Say it -> types it: stacked, so each sentence stays on one line instead of squeezing into two narrow columns */
+  .talk-type { flex-direction: column; gap: .5rem; }
+  .tt-step { width: 100%; grid-template-rows: none; grid-template-columns: auto minmax(0, 1fr); justify-items: start; text-align: left; column-gap: .7rem; row-gap: .2rem; }
+  .tt-step .tile { grid-row: span 2; }
+  .tt-arrow { transform: rotate(90deg); }
+  .real-shot, .real-shot.wide { max-width: 100%; }
   .hero p { font-size: 1.05rem; }
 }
