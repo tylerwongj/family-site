@@ -234,7 +234,10 @@ h3.q .i { width: 1.5rem; height: 1.5rem; }
 .btn:hover { text-decoration: none; filter: brightness(1.08); }
 .btn[aria-disabled="true"] { background: var(--line); color: var(--muted); cursor: default; filter: none; }
 .alt-dl { display: inline-flex; align-items: center; justify-content: center; gap: .4rem; font-size: .92rem; font-weight: 600; min-height: 44px; text-align: center; }
-.dl small { color: var(--muted); text-align: center; min-height: 1.5em; }
+.dl small { color: var(--muted); text-align: right; min-height: 1.5em; }
+/* The download button is small, bottom right (Tyler's rule: no big full-width buttons); phones get the full width */
+.dl > .btn { justify-self: end; padding-inline: 1.6rem; }
+.dl > .alt-dl { justify-self: end; }
 .check-file { margin-top: 1.25rem; border-top: 1px solid var(--line); padding-top: 1rem; }
 .check-file summary { cursor: pointer; font-weight: 650; display: flex; align-items: center; gap: .5rem; list-style: none; min-height: 44px; }
 .check-file summary::-webkit-details-marker { display: none; }
@@ -341,9 +344,12 @@ footer span { display: inline-flex; align-items: center; gap: .4rem; }
   .app-hero .lead { font-size: 1.05rem; }
   .app-card { grid-template-columns: minmax(0, 1fr); }
   /* Say it -> types it: stacked, so each sentence stays on one line instead of squeezing into two narrow columns */
-  .talk-type { flex-direction: column; gap: .5rem; }
+  .talk-type { flex-direction: column; gap: .5rem; padding: .8rem .75rem; }
   .tt-step { width: 100%; grid-template-rows: none; grid-template-columns: auto minmax(0, 1fr); justify-items: start; text-align: left; column-gap: .7rem; row-gap: .2rem; }
-  .tt-step .tile { grid-row: span 2; }
+  .tt-step .tile { grid-row: span 2; width: 2.2rem; height: 2.2rem; }
+  .tt-step .say, .tt-step .textbox { font-size: .95rem; }
+  .dl > .btn, .dl > .alt-dl { justify-self: stretch; }
+  .dl small { text-align: center; }
   .tt-arrow { transform: rotate(90deg); }
   .real-shot, .real-shot.wide { max-width: 100%; }
   .hero p { font-size: 1.05rem; }
