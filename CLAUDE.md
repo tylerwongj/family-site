@@ -36,5 +36,6 @@ Tyler's small website for **family and friends** (not the public): downloads of 
 
 ## Checks
 
+- **Gate (2026-10-25):** `node scripts/quick-check.mjs` (~1 min, also the Stop hook: a chat can't finish on FAIL): npm test, `npm run shots`, the Windows/Mac download picker, the phone home picture at 360/375, the shared UI audit, on a test copy on a spare port. Rows + proof: `CHECKS.md`; `node scripts/test-the-tester.mjs` plants 3 real past bugs.
 - `npm test`: release parsing, link/icon/file checks, safety rules, tips data (also runs in the publish workflow).
 - `npm run shots` (site must be running): headless, muted Chrome; every page at desktop, Mac, 375x812, 844x390, 891x309 + light mode; fails on page/console errors, sideways scroll or covered buttons; screenshots in `shots/` (git-ignored). Look at the pictures, not just "ok".
